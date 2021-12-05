@@ -1,0 +1,29 @@
+﻿{
+  "Strings": [
+    {
+      "Key": "ModelName",
+      "Name": "モデル名",
+      "Description": "使用するモデル名",
+      "Value": "MERROW",
+      "DefaultValue": "MERROW",
+      "Type": "",
+      "MaxLength": 100,
+      "Order": 0,
+      "Hide": false
+    },
+    {
+      "Key": "SyntheType",
+      "Name": "合成方式",
+      "Description": "音声合成の方法を選択する。",
+      "Value": "NSF",
+      "DefaultValue": "NSF",
+      "Type": "combobox",
+      "ComboItems": [
+        "WORLD",
+        "NSF"
+      ],
+      "Order": 0,
+      "Hide": false
+    }
+  ]
+}

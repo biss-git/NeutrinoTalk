@@ -1,0 +1,14 @@
+{
+  "Strings": [
+    {
+      "Key": "NuetrinoFolder",
+      "Name": "ニュートリノフォルダ",
+      "Description": "Neutrino の Run.bat があるフォルダを指定します。",
+      "Value": "",
+      "DefaultValue": "",
+      "Type": "folder",
+      "Order": 0,
+      "Hide": false
+    }
+  ]
+}
