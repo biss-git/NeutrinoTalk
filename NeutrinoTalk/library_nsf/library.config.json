@@ -4,6 +4,9 @@
   "Description": "Neutrino の音声モデル情報",
   "OS": "Windows",
   "Language": "Japanese",
+  "LibraryFormat": [
+    "NeutrinoLibrary"
+  ],
   "VolumeSetting": {
     "Name": "音量",
     "Unit": "[倍]",

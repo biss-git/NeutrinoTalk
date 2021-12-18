@@ -5,6 +5,9 @@
   "AssemblyName": "NeutrinoTalk.dll",
   "OS": "Windows",
   "Language": "Japanese",
+  "LibraryFormat": [
+    "NeutrinoLibrary"
+  ],
   "AccentEnable": true,
   "AccentHide": false,
   "SubPresetEnable": false,
