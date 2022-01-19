@@ -29,6 +29,17 @@ namespace NeutrinoTalk
             }
             return "WORLD";
         }
+        
+        public static string GetModelName(this SettingsBase settings)
+        {
+            var key = "ModelName";
+            if (settings.Strings.ContainsKey(key) &&
+                settings.Strings.TryGetSetting(key, out var setting))
+            {
+                return setting.Value;
+            }
+            return "MERROW";
+        }
 
         public static int GetTempo(this VoiceEffectValue effect)
         {

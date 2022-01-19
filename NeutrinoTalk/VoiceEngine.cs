@@ -34,6 +34,7 @@ namespace NeutrinoTalk
             double volume = mainVoice.VoiceEffect.GetVolume() * masterEffect.GetVolume();
             int keyShift = mainVoice.VoiceEffect.GetKeyShift();
             string syntheType = mainVoice.Library.Settings.GetSyntheType();
+            string modelName = mainVoice.Library.Settings.GetModelName();
 
             if (talkScript.MoraCount == 1 && talkScript.Sections[0].Moras[0].Character == "ッ")
             {
@@ -58,7 +59,7 @@ namespace NeutrinoTalk
             WriteMusicXml(notes, tempo, neutrinoFolder);
 
 
-            (var fs, var wave) = await GenerateWave(neutrinoFolder, syntheType);
+            (var fs, var wave) = await GenerateWave(neutrinoFolder, syntheType, modelName);
 
             setSamplingRate_Hz(fs);
 
@@ -180,7 +181,7 @@ namespace NeutrinoTalk
             }
         }
 
-        private async Task<(int, List<double>)> GenerateWave(string neutrinoFolder, string syntheType)
+        private async Task<(int, List<double>)> GenerateWave(string neutrinoFolder, string syntheType, string modelName)
         {
             var format = "RunBatFormat_WORLD";
             switch (syntheType)
@@ -194,7 +195,7 @@ namespace NeutrinoTalk
             }
 
             var batText = File.ReadAllText(Path.Combine(DllDirectory, format));
-            batText = batText.Replace("{ModelDir}", "MERROW");
+            batText = batText.Replace("{ModelDir}", modelName);
 
             var batPath = Path.Combine(neutrinoFolder, "unicoe.bat");
             File.WriteAllText(batPath, batText);
